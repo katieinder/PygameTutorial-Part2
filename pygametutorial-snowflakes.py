@@ -16,6 +16,7 @@ WHITE = (255, 255, 255)
 GREEN = (0, 255, 0)
 RED = (255, 0, 0)
  
+snow_list=[]
 
 pygame.init()
  
@@ -45,7 +46,9 @@ while not done:
     for i in range(50):
         x=np.random.random_integers(0,400)
         y=np.random.random_integers(0,400)
-        pygame.draw.circle(screen,WHITE,[x,y],2)
+        snow_list.append([x,y])
+    for i in range(len(snow_list)):
+        pygame.draw.circle(screen,WHITE,snow_list[i],2)
         
  
     # --- Go ahead and update the screen with what we've drawn.
